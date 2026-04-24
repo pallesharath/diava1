@@ -1,0 +1,125 @@
+/* ── AdminProducts — Image Upload Styles ──────────────── */
+
+.adm-modal--wide {
+  max-width: 720px;
+  width: 95vw;
+}
+
+.adm-images-section {
+  background: #0f2018;
+  border: 1px solid #1e3528;
+  border-radius: 12px;
+  padding: 18px 20px;
+  margin-bottom: 22px;
+}
+
+/* ── Image preview ─────────────────────────────────────── */
+.adm-img-preview-wrap {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin: 12px 0;
+  flex-wrap: wrap;
+}
+
+.adm-img-preview-main {
+  position: relative;
+  width: 200px;
+  height: 150px;
+  border-radius: 10px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: #1a2e1f;
+  border: 2px solid #2d9a5b;
+}
+.adm-img-preview-main img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.adm-img-remove-btn {
+  position: absolute; top: 6px; right: 6px;
+  background: rgba(192,57,43,.9); color: #fff;
+  border: none; border-radius: 50%;
+  width: 26px; height: 26px;
+  font-size: 16px; font-weight: 700;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  transition: background 0.2s;
+}
+.adm-img-remove-btn:hover { background: #e74c3c; }
+
+/* ── Thumbnails row ─────────────────────────────────────── */
+.adm-img-thumbs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.adm-img-thumb {
+  position: relative;
+  width: 70px; height: 54px;
+  border-radius: 7px; overflow: hidden;
+  border: 2px solid #1e3528;
+  cursor: pointer;
+  background: #1a2e1f;
+  transition: border-color 0.2s;
+  flex-shrink: 0;
+}
+.adm-img-thumb img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.adm-img-thumb--active { border-color: #2d9a5b; }
+.adm-img-thumb:hover   { border-color: #4dc97a; }
+
+.adm-img-cover-label {
+  position: absolute; bottom: 3px; left: 3px;
+  background: #1a6b3a; color: #f9e46a;
+  font-family: 'Poppins', sans-serif;
+  font-size: 8px; font-weight: 700;
+  padding: 1px 5px; border-radius: 3px;
+  text-transform: uppercase; letter-spacing: 0.5px;
+}
+
+.adm-img-move {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(0,0,0,.6); color: #fff;
+  border: none; font-size: 14px;
+  width: 18px; height: 22px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  padding: 0; border-radius: 3px;
+  transition: background 0.15s;
+}
+.adm-img-move:hover { background: rgba(0,0,0,.9); }
+.adm-img-move--left  { left: 0; border-radius: 0 3px 3px 0; }
+.adm-img-move--right { right: 0; border-radius: 3px 0 0 3px; }
+
+/* ── Upload button row ─────────────────────────────────── */
+.adm-img-upload-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.adm-btn--upload {
+  background: #163d26;
+  color: #6ddc9a;
+  border: 1px solid #2d9a5b;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px; font-weight: 600;
+  padding: 9px 20px; border-radius: 9px;
+  cursor: pointer; transition: all 0.2s;
+}
+.adm-btn--upload:hover:not(:disabled) {
+  background: #1a6b3a; color: #fff;
+}
+.adm-btn--upload:disabled {
+  opacity: 0.55; cursor: not-allowed;
+}
+
+.adm-label-hint {
+  font-family: 'Poppins', sans-serif;
+  font-size: 11px;
+  color: #5a8a6a;
+  font-style: italic;
+}
