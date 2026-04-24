@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.0b44dbc4.css",
-    "main.js": "/static/js/main.e97fce14.js",
+    "main.css": "/static/css/main.3bc19d44.css",
+    "main.js": "/static/js/main.70dc38e9.js",
     "static/media/traditional-man.png": "/static/media/traditional-man.11853cb280f8820bfd69.png",
     "static/media/diava-logo.png": "/static/media/diava-logo.2aa47fd467d9c5205b1e.png",
     "index.html": "/index.html",
-    "main.0b44dbc4.css.map": "/static/css/main.0b44dbc4.css.map",
-    "main.e97fce14.js.map": "/static/js/main.e97fce14.js.map"
+    "main.3bc19d44.css.map": "/static/css/main.3bc19d44.css.map",
+    "main.70dc38e9.js.map": "/static/js/main.70dc38e9.js.map"
   },
   "entrypoints": [
-    "static/css/main.0b44dbc4.css",
-    "static/js/main.e97fce14.js"
+    "static/css/main.3bc19d44.css",
+    "static/js/main.70dc38e9.js"
   ]
 }
