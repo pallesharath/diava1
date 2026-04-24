@@ -56,6 +56,27 @@
 }
 .contact-card__value--link:hover { color: #2d9a5b; text-decoration: underline; }
 
+@media (max-width: 768px) {
+  .contact-page { padding: 60px 30px; }
+  .contact-page__title { font-size: clamp(28px, 4vw, 40px); margin-bottom: 28px; }
+  .contact-card { padding: 18px 20px; gap: 14px; }
+  .contact-card__icon { font-size: 24px; }
+  .contact-card__value { font-size: 14px; }
+}
 @media (max-width: 600px) {
-  .contact-page { padding: 52px 20px; }
+  .contact-page { padding: 40px 16px; }
+  .contact-page__title { font-size: clamp(22px, 5vw, 32px); margin: 12px 0 24px; }
+  .contact-list { gap: 16px; }
+  .contact-card { padding: 16px 16px; gap: 12px; flex-direction: column; text-align: center; }
+  .contact-card__icon { font-size: 28px; margin-top: 0; }
+  .contact-card__label { font-size: 10px; }
+  .contact-card__value { font-size: 13px; }
+}
+@media (max-width: 380px) {
+  .contact-page { padding: 30px 12px; }
+  .contact-page__title { font-size: 20px; margin-bottom: 16px; }
+  .contact-list { gap: 12px; }
+  .contact-card { padding: 12px 12px; }
+  .contact-card__icon { font-size: 24px; }
+  .contact-card__value { font-size: 12px; }
 }

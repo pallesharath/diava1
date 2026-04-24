@@ -15,7 +15,6 @@
     "webpack": "5.75.0"
   },
   "scripts": {
-    "prebuild": "chmod +x ./node_modules/.bin/react-scripts || true",
     "start": "react-scripts start",
     "build": "react-scripts build"
   },
