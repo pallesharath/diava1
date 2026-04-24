@@ -162,9 +162,10 @@
   flex-direction: row;
   align-items: center;
   gap: 12px;
-  padding: 14px 16px;
+  padding: 14px 16px 28px 16px;
   transition: opacity 0.38s ease;
   position: relative;
+  justify-content: space-between;
 }
 .vm-ad--hidden { opacity: 0; }
 .vm-ad--shown  { opacity: 1; }
@@ -221,8 +222,13 @@
 
 /* ── Dots ──────────────────────────────────────── */
 .ad-dots {
-  display: flex; gap: 7px;
-  justify-content: center; margin-top: 6px;
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 7px;
+  justify-content: center;
 }
 .ad-dot {
   width: 8px; height: 8px; border-radius: 50%;

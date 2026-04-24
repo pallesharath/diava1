@@ -11,27 +11,39 @@ class SupabaseClient {
   }
 
   async request(method, path, body = null, extraHeaders = {}) {
-    if (!this.ready) throw new Error('Supabase not configured. Check .env.local');
-
-    const res = await fetch(`${this.url}/rest/v1${path}`, {
-      method,
-      headers: {
-        'apikey':        this.anonKey,
-        'Authorization': `Bearer ${this.anonKey}`,
-        'Content-Type':  'application/json',
-        // ✅ FIX 1: Always ask Supabase to return the full row after INSERT/PATCH
-        'Prefer':        'return=representation',
-        ...extraHeaders,
-      },
-      body: body ? JSON.stringify(body) : undefined,
-    });
-
-    if (method === 'DELETE' || res.status === 204) return null;
-    if (!res.ok) {
-      const err = await res.text();
-      throw new Error(`Supabase ${method} ${path}: ${res.status} — ${err}`);
+    if (!this.ready) {
+      console.warn('⚠️ Supabase not configured. Check environment variables REACT_APP_SUPABASE_URL and REACT_APP_SUPABASE_ANON_KEY');
+      return null;
     }
-    return res.json();
+
+    const url = `${this.url}/rest/v1${path}`;
+    
+    try {
+      const res = await fetch(url, {
+        method,
+        headers: {
+          'apikey':        this.anonKey,
+          'Authorization': `Bearer ${this.anonKey}`,
+          'Content-Type':  'application/json',
+          'Prefer':        'return=representation',
+          ...extraHeaders,
+        },
+        body: body ? JSON.stringify(body) : undefined,
+      });
+
+      if (method === 'DELETE' || res.status === 204) return null;
+      
+      if (!res.ok) {
+        const err = await res.text();
+        console.error(`❌ Supabase ${method} ${path}:`, res.status, err);
+        throw new Error(`Supabase ${method} ${path}: ${res.status} — ${err}`);
+      }
+      
+      return res.json();
+    } catch (err) {
+      console.error('❌ Request failed:', err);
+      throw err;
+    }
   }
 
   // ── Products ─────────────────────────────────────────
