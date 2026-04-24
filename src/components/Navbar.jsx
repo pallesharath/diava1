@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from '../assets/diava-logo.png';
 import './Navbar.css';
 
@@ -8,9 +8,12 @@ import './Navbar.css';
 const NAV_ITEMS = ['Home', 'About Us', 'Products', 'Contact'];
 
 export default function Navbar({ activePage, setActivePage, setActiveCategory }) {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   function navigate(item) {
     setActivePage(item);
     setActiveCategory('All');
+    setMenuOpen(false); // Close menu after navigation
   }
 
   return (
@@ -23,8 +26,19 @@ export default function Navbar({ activePage, setActivePage, setActiveCategory })
         onClick={() => navigate('Home')}
       />
 
+      {/* Hamburger Menu Button (mobile only) */}
+      <button
+        className={`navbar__hamburger ${menuOpen ? 'navbar__hamburger--open' : ''}`}
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Toggle navigation menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
       {/* Nav links */}
-      <div className="navbar__links">
+      <div className={`navbar__links ${menuOpen ? 'navbar__links--open' : ''}`}>
         {NAV_ITEMS.map((item) => (
           <button
             key={item}
