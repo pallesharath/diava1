@@ -309,17 +309,18 @@
   .vm-board-overlay { top: 30%; width: 85%; height: 60%; }
 }
 /* ─── PRODUCT CARD FULL UPGRADE ───────────────────────── */
-/* ─── PRODUCTS GRID (FIXED 4 PER ROW) ───────────────── */
-.products-grid,
+/* ─── PRODUCT CARD UPDATE ONLY ───────────────────────── */
+
+/* GRID — keep 4 in desktop */
 .home-products__grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
+  gap: 24px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* ─── CARD ───────────────── */
+/* CARD */
 .prod-card {
   border-radius: 18px;
   overflow: hidden;
@@ -335,24 +336,21 @@
   box-shadow: 0 14px 32px rgba(0,0,0,0.12);
 }
 
-/* ─── IMAGE (BIG — MATCH YOUR IMAGE) ───────────────── */
+/* 🔥 IMAGE BIG (your main requirement) */
 .prod-card-img {
-  height: 220px;   /* 🔥 KEY CHANGE */
+  height: 220px;   /* increased height */
   background: #dcd3c5;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
 }
 
 .prod-card-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;   /* 🔥 fills nicely */
+  object-fit: cover;
 }
 
-/* ─── CATEGORY BADGE */
+/* BADGE */
 .prod-card-badge {
   position: absolute;
   top: 10px;
@@ -365,28 +363,25 @@
   background: #c66a0a;
 }
 
-/* ─── BODY (COMPACT) */
+/* BODY — reduced space */
 .prod-card-body {
-  padding: 14px;      /* 🔽 reduced */
+  padding: 14px;
   display: flex;
   flex-direction: column;
-  gap: 6px;           /* 🔽 reduced */
+  gap: 6px;
 }
 
-/* NAME */
 .prod-card-name {
   font-size: 18px;
   font-weight: 700;
   color: #0c3520;
 }
 
-/* LOCATION */
 .prod-card-origin {
   font-size: 12px;
   color: #6a8a7a;
 }
 
-/* PRICE */
 .prod-card-price {
   font-size: 18px;
   font-weight: 800;
@@ -409,4 +404,20 @@
 
 .prod-card-btn:hover {
   transform: scale(1.04);
+}
+
+/* ─── RESPONSIVE ONLY FOR PRODUCTS ───────────────── */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .home-products__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .home-products__grid {
+    grid-template-columns: 1fr;  /* one by one */
+  }
 }
