@@ -11,6 +11,7 @@ export const INIT_PRODUCTS = [
       'Premium quality organic rice grown in fertile fields of Andhra Pradesh. Hand-picked and sun-dried to preserve natural nutrients. Rich in carbohydrates and essential minerals. Perfect for daily consumption.',
     weight: '5kg, 10kg, 25kg',
     origin: 'Andhra Pradesh',
+    image_url: 'https://images.unsplash.com/photo-1586143665266-142fdcc1d502?w=300&h=300&fit=crop',
     benefits: ['Chemical-free', 'Rich in nutrients', 'Long grain', 'High shelf life'],
   },
   {
@@ -23,6 +24,7 @@ export const INIT_PRODUCTS = [
       'Traditional jowar grown in the Deccan plateau. High in fibre and iron, gluten-free. Used for making rotis, ladoos, and porridge. Drought-resistant crop cultivated for centuries.',
     weight: '1kg, 5kg, 10kg',
     origin: 'Kurnool, AP',
+    image_url: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=300&h=300&fit=crop',
     benefits: ['Gluten-free', 'High fibre', 'Iron-rich', 'Drought-hardy'],
   },
   {
@@ -35,6 +37,7 @@ export const INIT_PRODUCTS = [
       'Nutritious bajra from the dry fields of Rayalaseema. Rich in magnesium and potassium. Great for winter recipes, khichdi, and traditional flatbreads.',
     weight: '1kg, 5kg',
     origin: 'Anantapur, AP',
+    image_url: 'https://images.unsplash.com/photo-1552777286-5c5b73a3c50a?w=300&h=300&fit=crop',
     benefits: ['Magnesium-rich', 'Warming grain', 'Gluten-free', 'Antioxidants'],
   },
   {
@@ -47,6 +50,7 @@ export const INIT_PRODUCTS = [
       'Rare heirloom black rice packed with anthocyanins and antioxidants. Grown in small batches in the Eastern Ghats. Nutty flavour and chewy texture, ideal for salads and desserts.',
     weight: '500g, 1kg',
     origin: 'Vizianagaram, AP',
+    image_url: 'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=300&h=300&fit=crop',
     benefits: ['Antioxidant-rich', 'Anthocyanins', 'Heirloom variety', 'High iron'],
   },
 
@@ -61,6 +65,7 @@ export const INIT_PRODUCTS = [
       'Authentic Guntur red chillies, the pride of Andhra Pradesh. Known worldwide for their intense heat and deep red colour. Sun-dried and cleaned to give the best flavour to your dishes.',
     weight: '250g, 500g, 1kg',
     origin: 'Guntur, AP',
+    image_url: 'https://images.unsplash.com/photo-1599599810694-b5ac4dd26626?w=300&h=300&fit=crop',
     benefits: ['High capsaicin', 'Rich colour', 'Naturally dried', 'Premium grade'],
   },
   {
@@ -73,6 +78,7 @@ export const INIT_PRODUCTS = [
       'Pure Nizamabad turmeric with high curcumin content. Grown using traditional methods. Bright yellow colour and strong aroma. Prized for cooking and Ayurvedic use.',
     weight: '250g, 500g, 1kg',
     origin: 'Nizamabad, TG',
+    image_url: 'https://images.unsplash.com/photo-1599599810775-c59e1ba77b48?w=300&h=300&fit=crop',
     benefits: ['High curcumin', 'Anti-inflammatory', 'Natural colour', 'Medicinal'],
   },
   {
@@ -85,6 +91,7 @@ export const INIT_PRODUCTS = [
       'Aromatic coriander seeds from Krishna district. Freshly dried and cleaned. Essential for tempering dals, biryanis, and chutneys. Mild citrus note with earthy undertones.',
     weight: '250g, 500g, 1kg',
     origin: 'Krishna, AP',
+    image_url: 'https://images.unsplash.com/photo-1599599810872-cd9e7f4ff656?w=300&h=300&fit=crop',
     benefits: ['Digestive aid', 'Fresh aroma', 'Premium clean', 'Versatile spice'],
   },
   {
@@ -97,6 +104,7 @@ export const INIT_PRODUCTS = [
       'Hand-cleaned cumin seeds with a bold, earthy fragrance. Essential staple of Telugu cuisine, used in dals, rice dishes, and spice blends. Helps digestion and improves appetite.',
     weight: '250g, 500g, 1kg',
     origin: 'Prakasam, AP',
+    image_url: 'https://images.unsplash.com/photo-1599599810807-8a3f4c9a8f8b?w=300&h=300&fit=crop',
     benefits: ['Digestive', 'Bold aroma', 'Hand-cleaned', 'Zero additives'],
   },
   {
@@ -109,6 +117,7 @@ export const INIT_PRODUCTS = [
       'Premium Malabar-grade black pepper sourced from the hilly estates of Alluri Sitharama Raju district. Strong pungent aroma and heat. Freshly dried peppercorns with natural oils intact.',
     weight: '100g, 250g, 500g',
     origin: 'Alluri Dist., AP',
+    image_url: 'https://images.unsplash.com/photo-1599599810823-8c7b4c9a9c9b?w=300&h=300&fit=crop',
     benefits: ['Piperine-rich', 'Natural oils', 'Premium grade', 'Strong aroma'],
   },
 
@@ -123,6 +132,7 @@ export const INIT_PRODUCTS = [
       'Fresh farm groundnuts from Anantapur region, the groundnut capital of India. Rich in healthy fats and proteins. Best for peanut oil, chutney, or roasted snacks.',
     weight: '1kg, 5kg, 10kg',
     origin: 'Anantapur, AP',
+    image_url: 'https://images.unsplash.com/photo-1599599810834-8f0c9c8c8c9c?w=300&h=300&fit=crop',
     benefits: ['High protein', 'Healthy fats', 'Farm fresh', 'Multipurpose'],
   },
   {
@@ -135,6 +145,7 @@ export const INIT_PRODUCTS = [
       'White hulled sesame seeds packed with calcium and healthy fats. Used in traditional sweets like tilgul and in tahini. Adds a nutty crunch to stir-fries and breads.',
     weight: '250g, 500g, 1kg',
     origin: 'Nellore, AP',
+    image_url: 'https://images.unsplash.com/photo-1599599810845-8f0c9c8c8c8c?w=300&h=300&fit=crop',
     benefits: ['Calcium-rich', 'High healthy fats', 'Versatile', 'Chemical-free'],
   },
   {
@@ -147,6 +158,7 @@ export const INIT_PRODUCTS = [
       'Premium sunflower seeds from the fields of Andhra Pradesh. Rich in Vitamin E and selenium. Great for snacking, baking, and oil extraction. Naturally hulled and cleaned.',
     weight: '500g, 1kg, 5kg',
     origin: 'Prakasam, AP',
+    image_url: 'https://images.unsplash.com/photo-1599599810856-8f0c9c8c8c8c?w=300&h=300&fit=crop',
     benefits: ['Vitamin E', 'Selenium-rich', 'Heart-healthy', 'Naturally hulled'],
   },
 
@@ -161,6 +173,7 @@ export const INIT_PRODUCTS = [
       'High-grade cotton from the fertile black soil of Andhra Pradesh. Long staple variety with excellent fibre strength. Ideal for textile manufacturing and export quality.',
     weight: 'Per quintal',
     origin: 'Kurnool, AP',
+    image_url: 'https://images.unsplash.com/photo-1599599810867-8f0c9c8c8c8c?w=300&h=300&fit=crop',
     benefits: ['Long staple', 'Export quality', 'High ginning', 'Zero contamination'],
   },
   {
@@ -173,6 +186,7 @@ export const INIT_PRODUCTS = [
       'Natural golden jute grown on the coastal belt near Kakinada. Strong, biodegradable fibre used for sacks, rope, and eco-friendly packaging.',
     weight: 'Per quintal',
     origin: 'Kakinada, AP',
+    image_url: 'https://images.unsplash.com/photo-1599599810878-8f0c9c8c8c8c?w=300&h=300&fit=crop',
     benefits: ['Biodegradable', 'Eco-friendly', 'High tensile', 'Golden grade'],
   },
 
@@ -185,8 +199,7 @@ export const INIT_PRODUCTS = [
     category: 'Fruits',
     description:
       'Sweet Banganapalli and Alphonso mangoes from the mango belt of Andhra Pradesh. Tree-ripened. Juicy, sweet and aromatic. Best for direct consumption and processing.',
-    weight: '5kg, 10kg boxes',
-    origin: 'Srungavarapukota',
+    image_url: 'https://images.unsplash.com/photo-1599599810889-8f0c9c8c8c8c?w=300&h=300&fit=crop',
     benefits: ['Tree ripened', 'No artificial ripening', 'Vitamin A', 'Export grade'],
   },
   {
@@ -199,6 +212,7 @@ export const INIT_PRODUCTS = [
       'Yelakki and Robusta bananas grown on the rich alluvial soils of the Godavari delta. Naturally sweet, soft and fragrant.',
     weight: 'Per dozen / crate',
     origin: 'East Godavari, AP',
+    image_url: 'https://images.unsplash.com/photo-1599599810900-8f0c9c8c8c8c?w=300&h=300&fit=crop',
     benefits: ['Natural sweetness', 'Farm fresh', 'Rich in potassium', 'No chemicals'],
   },
   {
@@ -209,6 +223,9 @@ export const INIT_PRODUCTS = [
     category: 'Fruits',
     description:
       'Fresh papayas grown in the warm climate of Nellore district. Rich in papain enzyme and Vitamin C. Sweet orange flesh with smooth texture.',
+    weight: '1kg, 5kg, 10kg',
+    origin: 'Nellore, AP',
+    image_url: 'https://images.unsplash.com/photo-1599599810911-8f0c9c8c8c8c?w=300&h=300&fit=cropwn in the warm climate of Nellore district. Rich in papain enzyme and Vitamin C. Sweet orange flesh with smooth texture.',
     weight: '1kg, 5kg, 10kg',
     origin: 'Nellore, AP',
     benefits: ['Digestive enzyme', 'Vitamin C', 'Farm-to-table', 'No pesticide'],
@@ -225,6 +242,7 @@ export const INIT_PRODUCTS = [
       'Tender round brinjals from the farms of Anantapur. The star ingredient of Telugu\'s beloved Gutti Vankaya curry.',
     weight: '500g, 1kg, 5kg',
     origin: 'Anantapur, AP',
+    image_url: 'https://images.unsplash.com/photo-1599599810922-8f0c9c8c8c8c?w=300&h=300&fit=crop',
     benefits: ['Low calorie', 'Rich in fibre', 'Anthocyanins', 'Gutti Vankaya grade'],
   },
   {
@@ -237,6 +255,7 @@ export const INIT_PRODUCTS = [
       'Bright red tomatoes from the highland farms of Chittoor, AP — the tomato belt of South India. High lycopene content.',
     weight: '1kg, 5kg, 10kg',
     origin: 'Chittoor, AP',
+    image_url: 'https://images.unsplash.com/photo-1599599810933-8f0c9c8c8c8c?w=300&h=300&fit=crop',
     benefits: ['High lycopene', 'Firm flesh', 'Rich Vitamin C', 'Natural red colour'],
   },
   {
@@ -249,6 +268,7 @@ export const INIT_PRODUCTS = [
       'Fiery green chillies fresh from Guntur farms. Essential in every Telugu household. Used in chutneys, curries, and pickles.',
     weight: '250g, 500g, 1kg',
     origin: 'Guntur, AP',
+    image_url: 'https://images.unsplash.com/photo-1599599810944-8f0c9c8c8c8c?w=300&h=300&fit=crop',
     benefits: ['Vitamin C-rich', 'High capsaicin', 'Farm fresh', 'Signature Andhra heat'],
   },
 ];

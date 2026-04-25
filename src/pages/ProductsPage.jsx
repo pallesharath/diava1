@@ -1,159 +1,103 @@
-import React, { useState, useEffect } from 'react';
-import './HomePage.css';
-import villageman from '../assets/traditional-man.png';
+import React, { useMemo } from 'react';
+import './ProductsPage.css';
 
-export default function HomePage({
+export default function ProductsPage({
   products,
-  ads,
+  categories,
   categoryMeta,
-  setActivePage,
+  activeCategory,
+  setActiveCategory,
   setSelectedProduct,
 }) {
-  const [adIndex, setAdIndex]   = useState(0);
-  const [adVisible, setAdVisible] = useState(true);
-
-  useEffect(() => {
-    if (ads.length === 0) return;
-    const timer = setInterval(() => {
-      setAdVisible(false);
-      setTimeout(() => {
-        setAdIndex((i) => (i + 1) % ads.length);
-        setAdVisible(true);
-      }, 400);
-    }, 3400);
-    return () => clearInterval(timer);
-  }, [ads.length]);
-
-  useEffect(() => { setAdIndex(0); setAdVisible(true); }, [ads.length]);
-
-  const currentAd = ads[adIndex] || { title: 'Diava', desc: 'Farm fresh produce' };
-  const featuredProducts = products.slice(0, 6);
+  // ── Filter products by category ────────────────────────
+  const filteredProducts = useMemo(() => {
+    if (!products || products.length === 0) return [];
+    if (activeCategory === 'All') return products;
+    return products.filter((p) => p.category === activeCategory);
+  }, [products, activeCategory]);
 
   return (
-    <div className="home">
+    <div className="products-page">
+      {/* ── HEADER ────────────────────────────────────────── */}
+      <section className="products-header">
+        <span className="section-tag">Shop Fresh</span>
+        <h1 className="products-header__title">
+          All <span>Products</span>
+        </h1>
+        <p className="products-header__sub">
+          Authentic farm produce from Andhra Pradesh's farming families
+        </p>
+      </section>
 
-      {/* ── HERO ─────────────────────────────────────────── */}
-      <section className="hero">
-        <div className="hero__left">
-          <div className="hero__tag">🌿 Farm to Table</div>
-          <h1 className="hero__title">
-            Dia<span>va</span>
-          </h1>
-          <p className="hero__sub">
-            Connecting the heart of Andhra Pradesh's farming communities
-            directly to your home. Fresh, organic &amp; authentic produce
-            grown with generations of wisdom.
-          </p>
-          <div className="hero__btns">
-            <button className="btn-primary" onClick={() => setActivePage('Products')}>
-              Explore Products
+      {/* ── CATEGORY FILTERS ──────────────────────────────── */}
+      <section className="products-filters">
+        <div className="category-buttons">
+          {/* "All" button */}
+          <button
+            className={`category-btn ${activeCategory === 'All' ? 'category-btn--active' : ''}`}
+            onClick={() => setActiveCategory('All')}
+          >
+            All
+          </button>
+
+          {/* Category buttons */}
+          {categories && categories.map((cat) => (
+            <button
+              key={cat.id || cat.name}
+              className={`category-btn ${activeCategory === cat.name ? 'category-btn--active' : ''}`}
+              onClick={() => setActiveCategory(cat.name)}
+              style={{
+                borderColor: activeCategory === cat.name ? categoryMeta[cat.name]?.color : '#ccc',
+                color: activeCategory === cat.name ? categoryMeta[cat.name]?.color : '#666',
+              }}
+            >
+              {cat.name}
             </button>
-            <button className="btn-outline" onClick={() => setActivePage('About Us')}>
-              Our Story
-            </button>
-          </div>
-        </div>
-
-        {/* Right panel — character holding signboard */}
-        <div className="hero__right">
-          <div className="hero__scene">
-            <div className="vm-wrapper">
-              <img
-                src={villageman}
-                alt="Village man with signboard"
-                className="vm-image"
-              />
-              <div className="vm-board-overlay">
-                {ads.length > 0 && (
-                  <div className={`vm-ad-inner ${adVisible ? 'vm-ad--shown' : 'vm-ad--hidden'}`}>
-
-                    {/* LEFT — text, vertically centered */}
-                    <div className="vm-ad-text">
-                      <div className="vm-ad-divider" />
-                      <div className="vm-ad-title">{currentAd.title}</div>
-                      <div className="vm-ad-desc">{currentAd.desc}</div>
-                    </div>
-
-                    {/* RIGHT — image or emoji */}
-                    <div className="vm-ad-icon">
-                      {currentAd.image ? (
-                        <img
-                          src={currentAd.image}
-                          alt={currentAd.title}
-                        />
-                      ) : (
-                        currentAd.icon || '🌿'
-                      )}
-                    </div>
-
-                    {ads.length > 1 && (
-                      <div className="ad-dots">
-                        {ads.map((_, i) => (
-                          <button
-                            key={i}
-                            className={`ad-dot ${i === adIndex ? 'ad-dot--on' : ''}`}
-                            onClick={() => {
-                              setAdVisible(false);
-                              setTimeout(() => { setAdIndex(i); setAdVisible(true); }, 350);
-                            }}
-                          />
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
-      {/* ── FEATURED PRODUCTS ────────────────────────────── */}
-      <section className="home-products">
-        <div className="home-products__header">
-          <span className="section-tag">Our Harvest</span>
-          <h2 className="home-products__title">
-            Fresh <span>Products</span>
-          </h2>
-          <p className="home-products__sub">
-            Directly sourced from Andhra Pradesh's finest farming communities
-          </p>
-        </div>
+      {/* ── PRODUCTS GRID ─────────────────────────────────── */}
+      <section className="products-grid-section">
+        {filteredProducts && filteredProducts.length > 0 ? (
+          <div className="products-grid">
+            {filteredProducts.map((product) => {
+              const meta = categoryMeta[product.category] || { color: '#1a6b3a', bg: '#e8f8ee' };
+              const firstImage = product.images?.[0] || product.image_url || null;
 
-        <div className="home-products__grid">
-          {featuredProducts.map((p) => {
-            const meta = categoryMeta[p.category] || { color: '#1a6b3a', bg: '#e8f8ee' };
-            const firstImage = p.images?.[0] || p.image_url || null;
-            return (
-              <div key={p.id} className="prod-card">
-                <div className="prod-card-img">
-                  {firstImage ? (
-                    <img src={firstImage} alt={p.name} />
-                  ) : (
-                    <span style={{ fontSize: 48 }}>{p.emoji}</span>
-                  )}
-                  <span className="prod-card-badge" style={{ background: meta.color }}>
-                    {p.category}
-                  </span>
+              return (
+                <div key={product.id} className="prod-card">
+                  <div className="prod-card-img">
+                    {firstImage ? (
+                      <img src={firstImage} alt={product.name} />
+                    ) : (
+                      <span style={{ fontSize: 48 }}>{product.emoji || '🌾'}</span>
+                    )}
+                    <span
+                      className="prod-card-badge"
+                      style={{ background: meta.color }}
+                    >
+                      {product.category}
+                    </span>
+                  </div>
+                  <div className="prod-card-body">
+                    <div className="prod-card-name">{product.name}</div>
+                    <div className="prod-card-origin">📍 {product.origin}</div>
+                    <div className="prod-card-price">{product.price}</div>
+                    <button
+                      className="prod-card-btn"
+                      onClick={() => setSelectedProduct(product)}
+                    >
+                      View Details →
+                    </button>
+                  </div>
                 </div>
-                <div className="prod-card-body">
-                  <div className="prod-card-name">{p.name}</div>
-                  <div className="prod-card-origin">📍 {p.origin}</div>
-                  <div className="prod-card-price">{p.price}</div>
-                  <button className="prod-card-btn" onClick={() => setSelectedProduct(p)}>
-                    View Details →
-                  </button>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {products.length > 6 && (
-          <div className="home-products__cta">
-            <button className="btn-primary" onClick={() => setActivePage('Products')}>
-              View All Products →
-            </button>
+              );
+            })}
+          </div>
+        ) : (
+          <div className="products-empty">
+            <p>No products found in this category.</p>
           </div>
         )}
       </section>

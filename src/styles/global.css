@@ -96,11 +96,14 @@ body {
   font-size: 68px;
   position: relative;
   overflow: hidden;
+  background: linear-gradient(135deg, #f5f1eb 0%, #ebe5dd 100%);
+  padding: 12px;
 }
 .prod-card-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+  display: block;
 }
 .prod-card-badge {
   position: absolute;

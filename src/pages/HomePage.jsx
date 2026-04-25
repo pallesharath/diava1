@@ -13,7 +13,7 @@ export default function HomePage({
   const [adVisible, setAdVisible] = useState(true);
 
   useEffect(() => {
-    if (ads.length === 0) return;
+    if (!ads || ads.length === 0) return;
     const timer = setInterval(() => {
       setAdVisible(false);
       setTimeout(() => {
@@ -22,12 +22,12 @@ export default function HomePage({
       }, 400);
     }, 3400);
     return () => clearInterval(timer);
-  }, [ads.length]);
+  }, [ads]);
 
-  useEffect(() => { setAdIndex(0); setAdVisible(true); }, [ads.length]);
+  useEffect(() => { setAdIndex(0); setAdVisible(true); }, [ads]);
 
-  const currentAd = ads[adIndex] || { title: 'Diava', desc: 'Farm fresh produce' };
-  const featuredProducts = products.slice(0, 6);
+  const currentAd = (ads && ads[adIndex]) || { title: 'Diava', desc: 'Farm fresh produce' };
+  const featuredProducts = (products && products.slice(0, 6)) || [];
 
   return (
     <div className="home">
