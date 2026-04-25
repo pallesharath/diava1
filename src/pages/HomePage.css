@@ -290,8 +290,8 @@
   .home-products { padding: 40px 16px; }
   .home-products__title { font-size: clamp(28px, 5vw, 40px); }
   .home-products__grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 16px; }
-  .vm-wrapper { width: 85vw; max-width: 300px; }
-  .hero__right { min-height: 280px; }
+  .vm-wrapper { width: 85vw; max-width: 480px; }
+  .hero__right { min-height: 420px; }
   .vm-board-overlay { top: 35%; width: 80%; height: 55%; }
 }
 @media (max-width: 380px) {
